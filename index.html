@@ -17,7 +17,7 @@
             padding: 50px 0;
         }
         .menu-card img {
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
         .nav-pills .nav-link.active {
@@ -25,6 +25,12 @@
         }
         .nav-pills .nav-link {
             color: #4a2c2a;
+        }
+        .category-title {
+            color: #4a2c2a;
+            border-bottom: 2px solid #4a2c2a;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
         }
         .btn-wa {
             background-color: #25D366;
@@ -74,33 +80,109 @@
         <!-- Tab Content -->
         <div class="tab-content" id="cafeTabContent">
             
-            <!-- TAB 1: MENU MINUMAN (Gambar, Nama, Harga - Tanpa Deskripsi) -->
+            <!-- TAB 1: MENU MINUMAN KOPI (Kategori Americano & Espresso) -->
             <div class="tab-pane fade show active" id="coffee-menu" role="tabpanel">
-                <div class="row g-4 justify-content-center">
+                
+                <!-- KATEGORI 1: VARIAN AMERICANO -->
+                <h4 class="category-title fw-bold"><i class="bi bi-cup me-2"></i>Kategori Americano</h4>
+                <div class="row g-3 mb-5">
                     
-                    <!-- Americano -->
+                    <!-- Americano Hot -->
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Americano">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Americano Hot">
                             <div class="card-body d-flex flex-column justify-content-center">
-                                <h5 class="card-title fw-bold mb-2">Americano</h5>
+                                <h6 class="card-title fw-bold mb-2">Americano Hot</h6>
                                 <span class="badge bg-secondary fs-6 align-self-center">Rp 15.000</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Espresso -->
+                    <!-- Iced Americano -->
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Espresso">
+                            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Iced Americano">
                             <div class="card-body d-flex flex-column justify-content-center">
-                                <h5 class="card-title fw-bold mb-2">Espresso</h5>
-                                <span class="badge bg-secondary fs-6 align-self-center">Rp 12.000</span>
+                                <h6 class="card-title fw-bold mb-2">Iced Americano</h6>
+                                <span class="badge bg-secondary fs-6 align-self-center">Rp 16.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Americano Lemonade -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
+                            <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Americano Lemonade">
+                            <div class="card-body d-flex flex-column justify-content-center">
+                                <h6 class="card-title fw-bold mb-2">Americano Lemonade</h6>
+                                <span class="badge bg-secondary fs-6 align-self-center">Rp 18.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Long Black -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Long Black">
+                            <div class="card-body d-flex flex-column justify-content-center">
+                                <h6 class="card-title fw-bold mb-2">Long Black</h6>
+                                <span class="badge bg-secondary fs-6 align-self-center">Rp 17.000</span>
                             </div>
                         </div>
                     </div>
 
                 </div>
+
+                <!-- KATEGORI 2: VARIAN ESPRESSO -->
+                <h4 class="category-title fw-bold"><i class="bi bi-cup-hot me-2"></i>Kategori Espresso</h4>
+                <div class="row g-3">
+                    
+                    <!-- Single Espresso -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
+                            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Single Espresso">
+                            <div class="card-body d-flex flex-column justify-content-center">
+                                <h6 class="card-title fw-bold mb-2">Single Espresso</h6>
+                                <span class="badge bg-secondary fs-6 align-self-center">Rp 12.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Double Espresso -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Double Espresso">
+                            <div class="card-body d-flex flex-column justify-content-center">
+                                <h6 class="card-title fw-bold mb-2">Double Espresso</h6>
+                                <span class="badge bg-secondary fs-6 align-self-center">Rp 15.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Espresso Milk (Latte) -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
+                            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Espresso Milk Latte">
+                            <div class="card-body d-flex flex-column justify-content-center">
+                                <h6 class="card-title fw-bold mb-2">Espresso Latte</h6>
+                                <span class="badge bg-secondary fs-6 align-self-center">Rp 20.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Espresso Macchiato -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
+                            <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Espresso Macchiato">
+                            <div class="card-body d-flex flex-column justify-content-center">
+                                <h6 class="card-title fw-bold mb-2">Espresso Macchiato</h6>
+                                <span class="badge bg-secondary fs-6 align-self-center">Rp 18.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
             <!-- TAB 2: KOPI BUBUK PER KG (Ada Tombol Pesan WA) -->
