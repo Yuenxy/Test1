@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kopi Kito - Specialist Coffee & Supply</title>
+    <title>Kopi Kito - Specialist Coffee</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -14,10 +14,10 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 60px 0;
+            padding: 50px 0;
         }
         .menu-card img {
-            height: 220px;
+            height: 200px;
             object-fit: cover;
         }
         .nav-pills .nav-link.active {
@@ -74,76 +74,32 @@
         <!-- Tab Content -->
         <div class="tab-content" id="cafeTabContent">
             
-            <!-- TAB 1: MENU MINUMAN KOPI SANA (Hanya Daftar & Harga) -->
+            <!-- TAB 1: MENU MINUMAN (Gambar, Nama, Harga - Tanpa Deskripsi) -->
             <div class="tab-pane fade show active" id="coffee-menu" role="tabpanel">
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card shadow-sm border-0">
-                            <div class="card-body p-4">
-                                <h4 class="card-title text-center fw-bold mb-4" style="color: #4a2c2a;">Daftar Menu Kopi</h4>
-                                
-                                <!-- Espresso Based -->
-                                <h6 class="fw-bold text-uppercase text-muted border-bottom pb-2 mb-3"><i class="bi bi-cup-hot me-1"></i> Espresso Based</h6>
-                                <ul class="list-group list-group-flush mb-4">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-                                        <div>
-                                            <div class="fw-bold">Espresso Single / Double</div>
-                                            <small class="text-muted">Ekstrak biji kopi murni mantap</small>
-                                        </div>
-                                        <span class="badge bg-secondary rounded-pill fs-6">Rp 12k / 15k</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-                                        <div>
-                                            <div class="fw-bold">Americano (Hot / Ice)</div>
-                                            <small class="text-muted">Espresso dengan campuran air mineral</small>
-                                        </div>
-                                        <span class="badge bg-secondary rounded-pill fs-6">Rp 15.000</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-                                        <div>
-                                            <div class="fw-bold">Es Kopi Susu Gula Aren</div>
-                                            <small class="text-muted">Espresso + susu segar + gula aren asli</small>
-                                        </div>
-                                        <span class="badge bg-secondary rounded-pill fs-6">Rp 18.000</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-                                        <div>
-                                            <div class="fw-bold">Cappuccino / Cafe Latte</div>
-                                            <small class="text-muted">Espresso dipadu dengan steamed milk lembut</small>
-                                        </div>
-                                        <span class="badge bg-secondary rounded-pill fs-6">Rp 20.000</span>
-                                    </li>
-                                </ul>
-
-                                <!-- Manual Brew -->
-                                <h6 class="fw-bold text-uppercase text-muted border-bottom pb-2 mb-3"><i class="bi bi-funnel me-1"></i> Manual Brew Kopi</h6>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-                                        <div>
-                                            <div class="fw-bold">V60 Pour Over</div>
-                                            <small class="text-muted">Seduhan penyaring kertas, rasa aroma lebih berseri</small>
-                                        </div>
-                                        <span class="badge bg-secondary rounded-pill fs-6">Rp 22.000</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-                                        <div>
-                                            <div class="fw-bold">Kopi Tubruk Original</div>
-                                            <small class="text-muted">Gaya tradisional, aroma kuat dan kental</small>
-                                        </div>
-                                        <span class="badge bg-secondary rounded-pill fs-6">Rp 10.000</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-                                        <div>
-                                            <div class="fw-bold">Japanese Ice Coffee</div>
-                                            <small class="text-muted">Manual brew dingin yang diseduh langsung ke es</small>
-                                        </div>
-                                        <span class="badge bg-secondary rounded-pill fs-6">Rp 23.000</span>
-                                    </li>
-                                </ul>
-
+                <div class="row g-4 justify-content-center">
+                    
+                    <!-- Americano -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Americano">
+                            <div class="card-body d-flex flex-column justify-content-center">
+                                <h5 class="card-title fw-bold mb-2">Americano</h5>
+                                <span class="badge bg-secondary fs-6 align-self-center">Rp 15.000</span>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Espresso -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
+                            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Espresso">
+                            <div class="card-body d-flex flex-column justify-content-center">
+                                <h5 class="card-title fw-bold mb-2">Espresso</h5>
+                                <span class="badge bg-secondary fs-6 align-self-center">Rp 12.000</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
