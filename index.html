@@ -14,7 +14,14 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 50px 0;
+            padding: 60px 0;
+        }
+        .menu-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .menu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
         }
         .menu-card img {
             height: 180px;
@@ -46,7 +53,7 @@
 <body class="bg-light">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#"><i class="bi bi-cup-hot me-2"></i>Kopi Kito</a>
         </div>
@@ -55,7 +62,7 @@
     <!-- Header / Banner -->
     <div class="hero-section text-center mb-4">
         <div class="container">
-            <h1 class="fw-bold">Pure Coffee & Beans Supply</h1>
+            <h1 class="fw-bold display-5">Pure Coffee & Beans Supply</h1>
             <p class="lead mb-0">Sajian kopi seduh segar & persediaan kopi bubuk kiloan berkualitas</p>
         </div>
     </div>
@@ -66,12 +73,12 @@
         <!-- Tab Navigation -->
         <ul class="nav nav-pills justify-content-center mb-4" id="cafeTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active fw-bold px-4 rounded-pill" id="coffee-menu-tab" data-bs-toggle="tab" data-bs-target="#coffee-menu" type="button" role="tab">
+                <button class="nav-link active fw-bold px-4 rounded-pill" id="coffee-menu-tab" data-bs-toggle="tab" data-bs-target="#coffee-menu" type="button" role="tab" aria-controls="coffee-menu" aria-selected="true">
                     <i class="bi bi-cup-straw me-1"></i> Seduhan Kopi (Dine-in/Takeaway)
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link fw-bold px-4 rounded-pill" id="bubuk-tab" data-bs-toggle="tab" data-bs-target="#bubuk" type="button" role="tab">
+                <button class="nav-link fw-bold px-4 rounded-pill" id="bubuk-tab" data-bs-toggle="tab" data-bs-target="#bubuk" type="button" role="tab" aria-controls="bubuk" aria-selected="false">
                     <i class="bi bi-box-seam me-1"></i> Kopi Bubuk (Per Kg)
                 </button>
             </li>
@@ -80,8 +87,8 @@
         <!-- Tab Content -->
         <div class="tab-content" id="cafeTabContent">
             
-            <!-- TAB 1: MENU MINUMAN KOPI (Kategori Americano & Espresso) -->
-            <div class="tab-pane fade show active" id="coffee-menu" role="tabpanel">
+            <!-- TAB 1: MENU MINUMAN KOPI -->
+            <div class="tab-pane fade show active" id="coffee-menu" role="tabpanel" aria-labelledby="coffee-menu-tab">
                 
                 <!-- KATEGORI 1: VARIAN AMERICANO -->
                 <h4 class="category-title fw-bold"><i class="bi bi-cup me-2"></i>Kategori Americano</h4>
@@ -159,10 +166,10 @@
                         </div>
                     </div>
 
-                    <!-- Espresso Milk (Latte) -->
+                    <!-- Espresso Latte -->
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Espresso Milk Latte">
+                            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Espresso Latte">
                             <div class="card-body d-flex flex-column justify-content-center">
                                 <h6 class="card-title fw-bold mb-2">Espresso Latte</h6>
                                 <span class="badge bg-secondary fs-6 align-self-center">Rp 20.000</span>
@@ -185,8 +192,8 @@
 
             </div>
 
-            <!-- TAB 2: KOPI BUBUK PER KG (Ada Tombol Pesan WA) -->
-            <div class="tab-pane fade" id="bubuk" role="tabpanel">
+            <!-- TAB 2: KOPI BUBUK PER KG -->
+            <div class="tab-pane fade" id="bubuk" role="tabpanel" aria-labelledby="bubuk-tab">
                 <div class="row g-4">
                     
                     <!-- Produk 1 -->
