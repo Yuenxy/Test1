@@ -4,264 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopi Kito - Specialist Coffee</title>
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <style>
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 60px 0;
-        }
-        .menu-card {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .menu-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
-        }
-        .menu-card img {
-            height: 180px;
-            object-fit: cover;
-        }
-        .nav-pills .nav-link.active {
-            background-color: #4a2c2a; /* Warna Kopi Gelap */
-        }
-        .nav-pills .nav-link {
-            color: #4a2c2a;
-        }
-        .category-title {
-            color: #4a2c2a;
-            border-bottom: 2px solid #4a2c2a;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-        }
-        .btn-wa {
-            background-color: #25D366;
-            color: white;
-            border: none;
-        }
-        .btn-wa:hover {
-            background-color: #1da851;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-light">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#"><i class="bi bi-cup-hot me-2"></i>Kopi Kito</a>
+            <div class="ms-auto d-flex align-items-center">
+                <button class="btn btn-outline-warning btn-sm fw-bold" id="btn-toggle-admin" onclick="toggleAdminMode()">
+                    <i class="bi bi-shield-lock me-1"></i> Mode Admin: OFF
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Header / Banner -->
+    <!-- Header -->
     <div class="hero-section text-center mb-4">
         <div class="container">
-            <h1 class="fw-bold display-5">Pure Coffee & Beans Supply</h1>
+            <h1 class="fw-bold">Pure Coffee & Beans Supply</h1>
             <p class="lead mb-0">Sajian kopi seduh segar & persediaan kopi bubuk kiloan berkualitas</p>
         </div>
     </div>
 
     <!-- Main Container -->
     <div class="container my-4">
-        
-        <!-- Tab Navigation -->
-        <ul class="nav nav-pills justify-content-center mb-4" id="cafeTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active fw-bold px-4 rounded-pill" id="coffee-menu-tab" data-bs-toggle="tab" data-bs-target="#coffee-menu" type="button" role="tab" aria-controls="coffee-menu" aria-selected="true">
-                    <i class="bi bi-cup-straw me-1"></i> Seduhan Kopi (Dine-in/Takeaway)
+        <!-- Panel Tombol Tambah (Khusus Admin) -->
+        <div id="admin-panel" class="d-none mb-4 text-center">
+            <button class="btn btn-success fw-bold px-4" onclick="openAddModal()">
+                <i class="bi bi-plus-circle me-2"></i>Tambah Menu Baru
+            </button>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-pills justify-content-center mb-4">
+            <li class="nav-item">
+                <button class="nav-link active fw-bold px-4 rounded-pill" id="coffee-tab" data-bs-toggle="tab" data-bs-target="#coffee-menu">
+                    <i class="bi bi-cup-straw me-1"></i> Seduhan Kopi
                 </button>
             </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link fw-bold px-4 rounded-pill" id="bubuk-tab" data-bs-toggle="tab" data-bs-target="#bubuk" type="button" role="tab" aria-controls="bubuk" aria-selected="false">
+            <li class="nav-item">
+                <button class="nav-link fw-bold px-4 rounded-pill" id="bubuk-tab" data-bs-toggle="tab" data-bs-target="#bubuk">
                     <i class="bi bi-box-seam me-1"></i> Kopi Bubuk (Per Kg)
                 </button>
             </li>
         </ul>
 
         <!-- Tab Content -->
-        <div class="tab-content" id="cafeTabContent">
-            
-            <!-- TAB 1: MENU MINUMAN KOPI -->
-            <div class="tab-pane fade show active" id="coffee-menu" role="tabpanel" aria-labelledby="coffee-menu-tab">
-                
-                <!-- KATEGORI 1: VARIAN AMERICANO -->
+        <div class="tab-content">
+            <!-- TAB 1: MENU MINUMAN -->
+            <div class="tab-pane fade show active" id="coffee-menu">
                 <h4 class="category-title fw-bold"><i class="bi bi-cup me-2"></i>Kategori Americano</h4>
-                <div class="row g-3 mb-5">
-                    
-                    <!-- Americano Hot -->
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Americano Hot">
-                            <div class="card-body d-flex flex-column justify-content-center">
-                                <h6 class="card-title fw-bold mb-2">Americano Hot</h6>
-                                <span class="badge bg-secondary fs-6 align-self-center">Rp 15.000</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row g-3 mb-5" id="container-americano"></div>
 
-                    <!-- Iced Americano -->
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Iced Americano">
-                            <div class="card-body d-flex flex-column justify-content-center">
-                                <h6 class="card-title fw-bold mb-2">Iced Americano</h6>
-                                <span class="badge bg-secondary fs-6 align-self-center">Rp 16.000</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Americano Lemonade -->
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Americano Lemonade">
-                            <div class="card-body d-flex flex-column justify-content-center">
-                                <h6 class="card-title fw-bold mb-2">Americano Lemonade</h6>
-                                <span class="badge bg-secondary fs-6 align-self-center">Rp 18.000</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Long Black -->
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Long Black">
-                            <div class="card-body d-flex flex-column justify-content-center">
-                                <h6 class="card-title fw-bold mb-2">Long Black</h6>
-                                <span class="badge bg-secondary fs-6 align-self-center">Rp 17.000</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- KATEGORI 2: VARIAN ESPRESSO -->
                 <h4 class="category-title fw-bold"><i class="bi bi-cup-hot me-2"></i>Kategori Espresso</h4>
-                <div class="row g-3">
-                    
-                    <!-- Single Espresso -->
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Single Espresso">
-                            <div class="card-body d-flex flex-column justify-content-center">
-                                <h6 class="card-title fw-bold mb-2">Single Espresso</h6>
-                                <span class="badge bg-secondary fs-6 align-self-center">Rp 12.000</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Double Espresso -->
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Double Espresso">
-                            <div class="card-body d-flex flex-column justify-content-center">
-                                <h6 class="card-title fw-bold mb-2">Double Espresso</h6>
-                                <span class="badge bg-secondary fs-6 align-self-center">Rp 15.000</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Espresso Latte -->
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Espresso Latte">
-                            <div class="card-body d-flex flex-column justify-content-center">
-                                <h6 class="card-title fw-bold mb-2">Espresso Latte</h6>
-                                <span class="badge bg-secondary fs-6 align-self-center">Rp 20.000</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Espresso Macchiato -->
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="card menu-card h-100 shadow-sm border-0 text-center">
-                            <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Espresso Macchiato">
-                            <div class="card-body d-flex flex-column justify-content-center">
-                                <h6 class="card-title fw-bold mb-2">Espresso Macchiato</h6>
-                                <span class="badge bg-secondary fs-6 align-self-center">Rp 18.000</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
+                <div class="row g-3" id="container-espresso"></div>
             </div>
 
-            <!-- TAB 2: KOPI BUBUK PER KG -->
-            <div class="tab-pane fade" id="bubuk" role="tabpanel" aria-labelledby="bubuk-tab">
-                <div class="row g-4">
-                    
-                    <!-- Produk 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card menu-card h-100 shadow-sm border-0">
-                            <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Kopi Arabika">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold mb-1">Bubuk Kopi Arabika Gayo</h5>
-                                <p class="text-muted small mb-2"><i class="bi bi-tag-fill me-1"></i>Kemasan Saset / Kiloan</p>
-                                <p class="card-text text-muted flex-grow-1">Aroma harum khas dengan karakter rasa buah yang segar dan keasaman sedang. Cocok untuk manual brew.</p>
-                                <div class="mb-3">
-                                    <span class="fs-5 fw-bold text-success">Rp 150.000</span> <span class="text-muted">/ kg</span>
-                                </div>
-                                <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20mau%20pesan%20Bubuk%20Kopi%20Arabika%20Gayo%20(Per%20Kg)." target="_blank" class="btn btn-wa w-100 fw-bold">
-                                    <i class="bi bi-whatsapp me-2"></i>Pesan via WA
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk 2 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card menu-card h-100 shadow-sm border-0">
-                            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Kopi Robusta">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold mb-1">Bubuk Kopi Robusta Dampit</h5>
-                                <p class="text-muted small mb-2"><i class="bi bi-tag-fill me-1"></i>Kemasan Saset / Kiloan</p>
-                                <p class="card-text text-muted flex-grow-1">Rasa kuat, pahit mantap dengan sentuhan aroma cokelat murni. Pilihan tepat untuk kopi hitam kental.</p>
-                                <div class="mb-3">
-                                    <span class="fs-5 fw-bold text-success">Rp 90.000</span> <span class="text-muted">/ kg</span>
-                                </div>
-                                <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20mau%20pesan%20Bubuk%20Kopi%20Robusta%20Dampit%20(Per%20Kg)." target="_blank" class="btn btn-wa w-100 fw-bold">
-                                    <i class="bi bi-whatsapp me-2"></i>Pesan via WA
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk 3 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card menu-card h-100 shadow-sm border-0">
-                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="House Blend">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold mb-1">House Blend Espresso (70:30)</h5>
-                                <p class="text-muted small mb-2"><i class="bi bi-tag-fill me-1"></i>Kemasan Saset / Kiloan</p>
-                                <p class="card-text text-muted flex-grow-1">Perpaduan 70% Robusta & 30% Arabika. Sangat cocok dijadikan bahan dasar es kopi susu kekinian.</p>
-                                <div class="mb-3">
-                                    <span class="fs-5 fw-bold text-success">Rp 110.000</span> <span class="text-muted">/ kg</span>
-                                </div>
-                                <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20mau%20pesan%20Bubuk%20House%20Blend%20(Per%20Kg)." target="_blank" class="btn btn-wa w-100 fw-bold">
-                                    <i class="bi bi-whatsapp me-2"></i>Pesan via WA
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            <!-- TAB 2: KOPI BUBUK -->
+            <div class="tab-pane fade" id="bubuk">
+                <div class="row g-4" id="container-bubuk"></div>
             </div>
-
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p class="mb-0 small">&copy; 2026 Kopi Kito - Specialist Coffee & Supply</p>
-    </footer>
+    <!-- MODAL FORM TAMBAH / EDIT MENU -->
+    <div class="modal fade" id="menuModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold" id="modalTitle">Tambah Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="menuForm">
+                        <input type="hidden" id="menuId">
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Kategori Menu</label>
+                            <select class="form-select" id="menuKategori" required onchange="toggleKemasanInput()">
+                                <option value="americano">Kategori Americano</option>
+                                <option value="espresso">Kategori Espresso</option>
+                                <option value="bubuk">Kopi Bubuk (Per Kg)</option>
+                            </select>
+                        </div>
 
-    <!-- Bootstrap 5 JS Bundle -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Nama Menu / Produk</label>
+                            <input type="text" class="form-input form-control" id="menuNama" required placeholder="Contoh: Americano Ice">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Harga</label>
+                            <input type="text" class="form-input form-control" id="menuHarga" required placeholder="Contoh: Rp 18.000">
+                        </div>
+
+                        <!-- Field Khusus Kopi Bubuk -->
+                        <div id="field-bubuk-only" class="d-none">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Kemasan</label>
+                                <input type="text" class="form-control" id="menuKemasan" placeholder="Contoh: Kemasan Saset / Kiloan">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Deskripsi Singkat</label>
+                                <textarea class="form-control" id="menuDeskripsi" rows="2" placeholder="Deskripsi produk..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Upload Gambar Produk</label>
+                            <input type="file" class="form-control" id="menuGambarFile" accept="image/*" onchange="previewImage(event)">
+                            <small class="text-muted">Atau pakai URL Gambar:</small>
+                            <input type="text" class="form-control mt-1" id="menuGambarUrl" placeholder="https://...">
+                            <img id="imagePreview" class="img-thumbnail mt-2 d-none" style="max-height: 150px;">
+                        </div>
+
+                        <div class="text-end mt-4">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-success fw-bold">Simpan Menu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="data/menu.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
