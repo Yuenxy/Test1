@@ -1,0 +1,38 @@
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px 0;
+}
+
+.menu-card img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #4a2c2a; /* Warna Kopi Gelap */
+}
+
+.nav-pills .nav-link {
+    color: #4a2c2a;
+}
+
+.category-title {
+    color: #4a2c2a;
+    border-bottom: 2px solid #4a2c2a;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.btn-wa {
+    background-color: #25D366;
+    color: white;
+    border: none;
+}
+
+.btn-wa:hover {
+    background-color: #1da851;
+    color: white;
+}
